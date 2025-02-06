@@ -1,57 +1,38 @@
-# Diablo
-
-
-
-Escáner de Puertos Avanzado
-Este es un escáner de puertos avanzado escrito en Python, diseñado para realizar escaneos de puertos TCP, SYN y UDP en direcciones IP específicas. El script permite obtener banners de servicios en los puertos abiertos y guardar los resultados en archivos JSON o de texto.
+GoodLuck es tu nuevo mejor amigo para auditar redes y encontrar puertos abiertos como un profesional. Con este script, podrás detectar vulnerabilidades, obtener banners de servicios y hacer todo un análisis de seguridad en tus objetivos, todo de manera rápida y eficiente. Ya sea que seas un pentester, un admin de sistemas o simplemente un hacker ético, GoodLuck está diseñado para ofrecerte lo mejor en escaneos de puertos, ¡y lo hace con estilo!
 
 Características
-Escaneo TCP, SYN y UDP: Soporta tres métodos de escaneo para detectar puertos abiertos en el objetivo.
-Obtención de banners: Si se detecta un puerto abierto, se realiza un intento de obtener un banner del servicio que se esté ejecutando en ese puerto.
-Multihilo: Utiliza múltiples hilos para realizar el escaneo de puertos de manera más rápida y eficiente.
-Personalización de puertos: Puedes especificar un rango de puertos a escanear.
-Salida de resultados: Los resultados del escaneo se guardan en un archivo JSON o de texto.
-Logo personalizable: Incluye un logo ASCII al inicio del script.
-Instalación
-Este script requiere que tengas instalados los siguientes paquetes de Python:
-
-scapy para realizar el escaneo de puertos y obtener banners.
-Puedes instalarlo ejecutando:
+Escaneo Poderoso: Escoge entre SYN, TCP o UDP para detectar puertos abiertos.
+Banner Grabbing: ¿Qué hay detrás de ese puerto abierto? GoodLuck agarra los banners para que sepas qué servicio está corriendo y qué versión tiene.
+Multihilo: Escanea varios puertos al mismo tiempo, ¡nada de esperar horas!
+Salida en JSON o TXT: Guarda los resultados en formato limpio, listo para analizar o compartir.
+Totalmente Flexible: Define el rango de puertos, elige el método de escaneo y, si te hace falta, personaliza el archivo de salida.
+Requisitos
+Python 3.x
+Paquete Scapy (sí, es el rey para manipular paquetes en redes)
 
 pip install scapy
-Uso
-Para ejecutar el script, usa el siguiente comando en la terminal:
 
-python3 diablo.py <IP objetivo> [opciones]
-Opciones
-target (requerido): La dirección IP del objetivo a escanear.
---ports (opcional): El rango de puertos a escanear. El valor predeterminado es 20-1024. Ejemplo: --ports 80-443.
---method (opcional): El método de escaneo que deseas utilizar. Los métodos disponibles son:
-syn: Escaneo SYN.
-tcp: Escaneo TCP.
-udp: Escaneo UDP. El valor predeterminado es tcp.
---output (opcional): El nombre del archivo de salida. Si no se especifica, el script pedirá que ingreses un nombre para el archivo. Ejemplo: --output resultados.json.
+Cómo Usarlo
+python goodluck.py <target> --ports <port_range> --method <scan_method> --output <output_file>
 
-python3 diablo.py <ip> --ports 80-443 --method tcp --output scan_results.json
-Si no especificas el archivo de salida, el script te pedirá que ingreses un nombre para el archivo.
+<target>: La IP o dominio que vas a escanear.
+--ports <port_range>: Rango de puertos a escanear (por ejemplo, 20-1024).
+--method <scan_method>: Método de escaneo:
+syn: Escaneo SYN (súper rápido).
+tcp: Conexión TCP completa.
+udp: Paquete UDP.
+--output <output_file>: Archivo donde se guardan los resultados. Si no lo defines, el nombre por defecto es scan_results.json.
 
-Ejemplo de salida
-El archivo de resultados generado será un archivo JSON o TXT con la siguiente estructura:
+Ejemplo
+Para escanear puertos en una IP objetivo, usando TCP y guardar todo en resultados.json, solo tienes que correr:
+python goodluck.py <tu target ip> --ports 0-65535 --method tcp --output resultados.json
 
-[
-    {
-        "port": 80,
-        "open": true,
-        "banner": "HTTP/1.1 400 Bad Request ..."
-    },
-    {
-        "port": 443,
-        "open": true,
-        "banner": "No banner"
-    }
-]
-Contribuciones
-Si deseas contribuir al desarrollo de este script, siéntete libre de hacer un fork del repositorio y enviar un pull request con tus mejoras.
+Lo que Hace el Código
+Escaneo de Puertos: Escoge el método de escaneo que prefieras (SYN, TCP o UDP) y GoodLuck lo ejecutará de manera eficiente, buscando puertos abiertos en el rango que determines.
+Banner Grabbing: Cuando encuentres un puerto abierto, el script intenta obtener el banner del servicio. Así podrás saber qué está corriendo y qué versión tiene. ¡Perfecto para identificar posibles vulnerabilidades!
+Escaneo Multihilo: No pierdas tiempo escaneando puerto por puerto. GoodLuck utiliza múltiples hilos para escanear en paralelo y obtener resultados más rápidos.
+Exportación de Resultados: Los resultados se guardan automáticamente en un archivo JSON o TXT, fácil de leer, analizar o compartir con otros.
 
-Licencia
-Este proyecto está bajo la licencia MIT.
+Si quieres mejorar el proyecto, haz un fork y envía tu pull request! Si encuentras un bug o tienes alguna sugerencia, abre un issue en el repositorio y lo miramos.
+
+
