@@ -1,6 +1,6 @@
 # GoodLuck - Escáner de Puertos 🚀
 
-**GoodLuck** es tu nuevo mejor amigo para auditar redes y encontrar puertos abiertos como un profesional. Con este script, podrás detectar vulnerabilidades, obtener banners de servicios y hacer todo un análisis de seguridad en tus objetivos, todo de manera rápida y eficiente. Ya sea que seas un pentester, un admin de sistemas o simplemente un hacker ético, **GoodLuck** está diseñado para ofrecerte lo mejor en escaneos de puertos, ¡y lo hace con estilo! 😎
+**GoodLuck** es tu nuevo amigo para auditar redes y encontrar puertos abiertos como un profesional. Con este script, podrás detectar vulnerabilidades, obtener banners de servicios y hacer todo un análisis de seguridad en tus objetivos, todo de manera rápida y eficiente. Ya sea que seas un pentester, un admin de sistemas o simplemente un hacker ético, **GoodLuck** está diseñado para ofrecerte lo mejor en escaneos de puertos.
 
 ## Características 🔧
 
